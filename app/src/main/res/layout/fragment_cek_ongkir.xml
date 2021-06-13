@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.CekOngkirFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/cardview_light_background">
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_judul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="APLIKASI CEK ONGKIR"
+            android:layout_below="@id/iv_logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:textSize="30dp"
+            android:textColor="@color/cardview_dark_background"/>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_judul"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:elevation="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/backgroundborderhitam"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginVertical="5dp"
+                android:padding="10dp"
+                >
+
+                <ImageView
+                    android:id="@+id/iv_kotaAsal"
+                    android:layout_marginEnd="8dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_kota"/>
+                <TextView
+                    android:id="@+id/tvMain_kotaAsal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kota Asal"
+                    android:layout_toRightOf="@id/iv_kotaAsal"
+                    />
+                <Spinner
+                    android:layout_below="@id/tvMain_kotaAsal"
+                    android:layout_toRightOf="@id/iv_kotaAsal"
+                    android:id="@+id/spinner_kotaAsal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown"
+                    />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/backgroundborderhitam"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginVertical="5dp"
+                android:padding="10dp"
+                >
+
+                <ImageView
+                    android:id="@+id/iv_kotaTujuan"
+                    android:layout_marginEnd="8dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_kota"/>
+                <TextView
+                    android:id="@+id/tvMain_kotaTujuan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kota Tujuan"
+                    android:layout_toRightOf="@id/iv_kotaTujuan"
+                    />
+                <Spinner
+                    android:layout_below="@id/tvMain_kotaTujuan"
+                    android:layout_toRightOf="@id/iv_kotaTujuan"
+                    android:id="@+id/spinner_kotaTujuan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown"
+                    />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/backgroundborderhitam"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginVertical="5dp"
+                android:padding="10dp"
+                >
+
+                <ImageView
+                    android:layout_marginEnd="8dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_scale"/>
+                <EditText
+                    android:id="@+id/et_berat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Masukkan Berat Paket (gram)"
+                    android:inputType="numberDecimal"
+                    />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:elevation="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/backgroundborderhitam"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginVertical="5dp"
+                android:padding="10dp"
+                >
+
+                <ImageView
+                    android:id="@+id/iv_kurir"
+                    android:layout_marginEnd="8dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_kurir"/>
+                <TextView
+                    android:id="@+id/tvMain_kurir"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kurir"
+                    android:layout_toRightOf="@id/iv_kurir"
+                    />
+                <Spinner
+                    android:layout_below="@id/tvMain_kurir"
+                    android:layout_toRightOf="@id/iv_kurir"
+                    android:id="@+id/spinner_kurir"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown"
+                    />
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_submit"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="100dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cek Ongkir"
+                android:background="#08305A"
+                android:textColor="@color/white"
+                />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>
