@@ -10,4 +10,9 @@
         android:title="History"
         android:icon="@drawable/ic_history"
         />
+    <item
+        android:id="@+id/menu_about"
+        android:title="About"
+        android:icon="@drawable/ic_about"
+        />
 </menu>
