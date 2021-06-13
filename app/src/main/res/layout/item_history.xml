@@ -90,34 +90,25 @@
                 android:text="1200 gram"
                 android:textColor="@color/white"/>
 
-            <TextView
-
-                android:layout_below="@id/tvHistory_berat"
-                android:id="@+id/tv_ketDiakses"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Tanggal diakses : "
-                android:textColor="@color/white"
-                android:textAlignment="textEnd"
-                android:textSize="20dp"
-                />
-
-            <TextView
-                android:id="@+id/tvHistory_tanggalDiakses"
-                android:layout_below="@id/tv_ketDiakses"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="13 Juni 2021"
-                android:textAlignment="textEnd"
-                android:textColor="@color/white"
-                />
-
             <Button
+                android:id="@+id/btn_detail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Detail"
-                android:layout_alignEnd="@id/tvHistory_tanggalDiakses"
-                android:layout_below="@id/tvHistory_tanggalDiakses"/>
+                android:layout_marginTop="30dp"
+                android:layout_alignEnd="@id/tvHistory_berat"
+                android:layout_below="@id/tvHistory_berat"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_delete"
+                android:layout_toLeftOf="@id/btn_detail"
+                android:layout_alignBottom="@id/btn_detail"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_delete"
+                android:backgroundTint="#ff0000"
+                android:layout_marginRight="10dp"
+                />
 
         </RelativeLayout>
 
