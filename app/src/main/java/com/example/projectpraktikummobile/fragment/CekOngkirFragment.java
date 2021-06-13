@@ -21,14 +21,22 @@ import android.widget.Spinner;
 
 import com.example.projectpraktikummobile.R;
 import com.example.projectpraktikummobile.activity.OngkirActivity;
+import com.example.projectpraktikummobile.adapter.AdapterHistory;
+import com.example.projectpraktikummobile.contact.HistoryContact;
+import com.example.projectpraktikummobile.entity.AppDatabase;
+import com.example.projectpraktikummobile.entity.DataHistory;
 import com.example.projectpraktikummobile.model.kota.ResultsItem;
+import com.example.projectpraktikummobile.presenter.HistoryPresenter;
 import com.example.projectpraktikummobile.services.OngkirListener;
 import com.example.projectpraktikummobile.services.OngkirService;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CekOngkirFragment extends Fragment {
+public class CekOngkirFragment extends Fragment implements HistoryContact.view{
+
+    AppDatabase appDatabase;
+    HistoryPresenter historyPresenter;
 
     Spinner spinner_kotaAsal,spinner_kotaTujuan,spinner_kurir;
     EditText et_berat;
@@ -54,6 +62,8 @@ public class CekOngkirFragment extends Fragment {
         spinner_kurir = view.findViewById(R.id.spinner_kurir);
 
 //        spinner_kotaAsal.setAdapter();
+
+        historyPresenter = new HistoryPresenter(this);
 
         new OngkirService().getKotaAPI(kotaListener);
 
@@ -104,6 +114,11 @@ public class CekOngkirFragment extends Fragment {
                     et_berat.setError("Berat tidak boleh kosong!");
                 }
                 else{
+
+                    appDatabase = AppDatabase.inidb(view.getContext());
+
+                    historyPresenter.insertData(selectedIdKotaAsal,selectedNamaKotaAsal,selectedIdKotaTujuan,selectedNamaKotaTujuan,Integer.parseInt(et_berat.getText().toString()),selectedKurir,appDatabase);
+
                     Intent intent = new Intent(getContext(), OngkirActivity.class);
                     intent.putExtra("NamaKotaAsal",selectedNamaKotaAsal);
                     intent.putExtra("NamaKotaTujuan",selectedNamaKotaTujuan);
@@ -159,5 +174,30 @@ public class CekOngkirFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_cek_ongkir, container, false);
+    }
+
+    @Override
+    public void successAdd() {
+
+    }
+
+    @Override
+    public void successDelete() {
+
+    }
+
+    @Override
+    public void getData(List<DataHistory> list) {
+
+    }
+
+    @Override
+    public void deleteData(DataHistory item) {
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }

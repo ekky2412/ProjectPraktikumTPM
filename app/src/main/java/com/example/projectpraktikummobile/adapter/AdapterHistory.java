@@ -16,6 +16,7 @@ import com.example.projectpraktikummobile.R;
 import com.example.projectpraktikummobile.activity.OngkirActivity;
 import com.example.projectpraktikummobile.contact.HistoryContact;
 import com.example.projectpraktikummobile.entity.DataHistory;
+import com.example.projectpraktikummobile.fragment.HistoryFragment;
 
 import java.util.List;
 
@@ -61,6 +62,14 @@ public class AdapterHistory extends RecyclerView.Adapter<AdapterHistory.viewHold
                 intent.putExtra("berat",item.getBerat());
                 intent.putExtra("kurir",item.getKurir());
                 v.getContext().startActivity(intent);
+            }
+        });
+
+        holder.btn_delete.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                mView.deleteData(item);
             }
         });
     }

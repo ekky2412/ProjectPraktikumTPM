@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.projectpraktikummobile.R;
+import com.example.projectpraktikummobile.fragment.AboutFragment;
 import com.example.projectpraktikummobile.fragment.CekOngkirFragment;
 import com.example.projectpraktikummobile.fragment.HistoryFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -36,6 +37,10 @@ public class MenuActivity extends AppCompatActivity implements BottomNavigationV
 
             case R.id.menu_history:
                 loadFragment(new HistoryFragment());
+                break;
+
+            case R.id.menu_about:
+                loadFragment(new AboutFragment());
                 break;
         }
 
