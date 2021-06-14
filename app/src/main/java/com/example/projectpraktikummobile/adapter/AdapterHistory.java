@@ -54,14 +54,14 @@ public class AdapterHistory extends RecyclerView.Adapter<AdapterHistory.viewHold
         holder.btn_detail.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), OngkirActivity.class);
+                Intent intent = new Intent(context, OngkirActivity.class);
                 intent.putExtra("NamaKotaAsal",item.getNamaKotaAsal());
                 intent.putExtra("NamaKotaTujuan",item.getNamaKotaTujuan());
                 intent.putExtra("idKotaAsal",item.getIdKotaAsal());
                 intent.putExtra("idKotaTujuan",item.getIdKotaTujuan());
-                intent.putExtra("berat",item.getBerat());
+                intent.putExtra("berat",String.valueOf(item.getBerat()));
                 intent.putExtra("kurir",item.getKurir());
-                v.getContext().startActivity(intent);
+                context.startActivity(intent);
             }
         });
 
